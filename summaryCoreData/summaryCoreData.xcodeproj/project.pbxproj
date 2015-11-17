@@ -437,11 +437,11 @@
 			baseConfigurationReference = 794256556E8F7E6E861725F5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/zhs/Desktop/TestPro/Test/20_Summary/summaryCoreData/summaryCoreData/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/zhs/Desktop/TestPro/Test/20_Summary/coreData/summaryCoreData/summaryCoreData/PrefixHeader.pch;
 				INFOPLIST_FILE = summaryCoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};
 			name = Debug;
 		};
@@ -450,11 +450,11 @@
 			baseConfigurationReference = B5CE98E495653DB4E89074D1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/zhs/Desktop/TestPro/Test/20_Summary/summaryCoreData/summaryCoreData/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/zhs/Desktop/TestPro/Test/20_Summary/coreData/summaryCoreData/summaryCoreData/PrefixHeader.pch;
 				INFOPLIST_FILE = summaryCoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};
 			name = Release;
 		};

@@ -17,7 +17,9 @@
     UISearchBar * searchBar;
 }
 
-@property (nonatomic, strong)NSMutableArray * dataArray;
+@property (nonatomic, strong) NSMutableArray * dataArray;
+@property (nonatomic, strong) NSMutableArray * tempArray;
+
 @property (nonatomic, assign)int count;
 
 @end
@@ -78,7 +80,7 @@
     
     
     UITableView * tableView = [UITableView new];
-    tableView.backgroundColor = [UIColor yellowColor];
+//    tableView.backgroundColor = [UIColor yellowColor];
     tableView.tag = 100;
     [tableView setDelegate:self];
     [tableView setDataSource:self];
@@ -164,9 +166,10 @@
     
     [self.context save:nil];
     [self.dataArray insertObject:person atIndex:0];
+    self.tempArray = self.dataArray;
 
     UITableView * tableView = (UITableView *)[self.view viewWithTag:100];
-    tableView.backgroundColor = [UIColor blueColor];
+//    tableView.backgroundColor = [UIColor blueColor];
     //让cell显示  在0区 0行
     NSIndexPath * indexPath = [NSIndexPath indexPathForRow:0
                                                  inSection:0];
@@ -178,8 +181,11 @@
     if (self.dataArray.count > 0) {
         NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name=%@", searchBar.text];
         NSArray * array = [self.dataArray filteredArrayUsingPredicate:predicate];
-        NSLog(@"%@", array);
-        [self.dataArray setArray:array];
+        if (array.count == 0) {
+            self.dataArray = self.tempArray;
+        }else {
+            self.dataArray = [NSMutableArray arrayWithArray: array];
+        }
         UITableView * tableView = (UITableView *)[self.view viewWithTag:100];
         [tableView reloadData];
     }
